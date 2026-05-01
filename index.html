@@ -10,12 +10,23 @@
 <body>
     <header class="top-bar">
         <div class="logo">WINDWARD LINE <span>// MLB PLAYOFF TERMINAL</span></div>
-        <div class="status-indicator">
-            <span class="pulse"></span> LIVE DATA STREAM
+        <div class="status-indicator" id="global-status">
+            <span class="pulse"></span> SYSTEM ONLINE
         </div>
     </header>
 
     <main class="dashboard">
+        
+        <section class="panel live-feed-panel">
+            <div class="live-panel-header">
+                <h2>LIVE TICK DATA STREAM</h2>
+                <select id="live-game-select" onchange="switchLiveGame()" style="display: none;"></select>
+            </div>
+            <div id="live-feed-container" class="live-feed-container">
+                <div class="loading">Scanning MLB network for active signals...</div>
+            </div>
+        </section>
+
         <section class="panel sandbox">
             <h2>REAL SCHEDULE SIMULATOR</h2>
             <div class="sandbox-controls">

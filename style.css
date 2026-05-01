@@ -21,6 +21,7 @@ body {
     padding: 20px;
 }
 
+/* Header */
 .top-bar {
     display: flex;
     justify-content: space-between;
@@ -63,6 +64,7 @@ body {
     100% { opacity: 1; }
 }
 
+/* Base Panel & Table Styles */
 .panel {
     background-color: var(--bg-panel);
     border: 1px solid var(--border-color);
@@ -103,4 +105,117 @@ td {
     color: var(--text-muted);
     font-style: italic;
     padding: 20px 0;
+}
+
+/* Scenario Sandbox Styles */
+.sandbox {
+    margin-bottom: 20px;
+    border-color: var(--accent-green);
+}
+
+.sandbox h2 {
+    color: var(--accent-green);
+}
+
+.sandbox-controls {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.control-group label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+select {
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    outline: none;
+}
+
+button {
+    padding: 8px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sim-btn {
+    background-color: var(--accent-green);
+    color: var(--bg-base);
+}
+
+.sim-btn:hover {
+    background-color: #0ea5e9;
+    color: white;
+}
+
+.reset-btn {
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+}
+
+.reset-btn:hover {
+    color: white;
+    border-color: white;
+}
+
+.simulated-data {
+    color: #fbbf24 !important; 
+}
+
+/* Multi-Division Grid Styles */
+.standings-grid {
+    display: grid;
+    /* Force exactly 3 columns so AL gets row 1, NL gets row 2 */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.standings-grid .panel {
+    margin-bottom: 0; 
+    background-color: #1e293b;
+}
+
+/* Make it responsive so it doesn't squish on small laptops */
+@media (max-width: 1200px) {
+    .standings-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 800px) {
+    .standings-grid { grid-template-columns: 1fr; }
+}
+
+/* --- LEAGUE COLOR CODING --- */
+/* American League (Red) */
+.panel.al-league {
+    border-top: 4px solid #ef4444; 
+}
+.panel.al-league h2 {
+    color: #ef4444;
+    border-bottom: 1px solid #ef4444;
+}
+
+/* National League (Blue) */
+.panel.nl-league {
+    border-top: 4px solid #3b82f6; 
+}
+.panel.nl-league h2 {
+    color: #3b82f6;
+    border-bottom: 1px solid #3b82f6;
 }

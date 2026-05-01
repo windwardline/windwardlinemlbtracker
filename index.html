@@ -16,28 +16,28 @@
     </header>
 
     <main class="dashboard">
-        <section class="panel">
-            <h2>AL EAST STANDINGS</h2>
-            <div class="table-container">
-                <table id="standings-table">
-                    <thead>
-                        <tr>
-                            <th>TEAM</th>
-                            <th>W</th>
-                            <th>L</th>
-                            <th>PCT</th>
-                            <th>GB</th>
-                            <th>MAGIC #</th>
-                        </tr>
-                    </thead>
-                    <tbody id="standings-body">
-                        <tr>
-                            <td colspan="6" class="loading">Awaiting API Connection...</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <section class="panel sandbox">
+            <h2>SCENARIO SIMULATOR</h2>
+            <div class="sandbox-controls">
+                <div class="control-group">
+                    <label>WINNER:</label>
+                    <select id="sim-winner">
+                        <option value="">-- Select Team --</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>LOSER:</label>
+                    <select id="sim-loser">
+                        <option value="">-- Select Team --</option>
+                    </select>
+                </div>
+                <button onclick="runSimulation()" class="sim-btn">RUN SIMULATION</button>
+                <button onclick="resetSimulation()" class="reset-btn">RESET</button>
             </div>
         </section>
+
+        <div id="standings-grid" class="standings-grid">
+            </div>
     </main>
 
     <script src="script.js"></script>

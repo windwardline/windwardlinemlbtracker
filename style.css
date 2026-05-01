@@ -143,6 +143,7 @@ select {
     border-radius: 4px;
     font-family: 'JetBrains Mono', monospace;
     outline: none;
+    min-width: 200px;
 }
 
 button {
@@ -153,16 +154,6 @@ button {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s;
-}
-
-.sim-btn {
-    background-color: var(--accent-green);
-    color: var(--bg-base);
-}
-
-.sim-btn:hover {
-    background-color: #0ea5e9;
-    color: white;
 }
 
 .reset-btn {
@@ -180,10 +171,70 @@ button {
     color: #fbbf24 !important; 
 }
 
+/* Schedule Ticker Styles */
+.schedule-ticker {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px dashed var(--border-color);
+    padding-bottom: 10px;
+}
+
+.game-card {
+    background-color: var(--bg-base);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.game-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.game-matchup {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.game-toggles {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 4px;
+    font-size: 0.8rem;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+.toggle-btn.active-w {
+    background-color: var(--accent-green);
+    color: var(--bg-base);
+    border-color: var(--accent-green);
+}
+
+.toggle-btn.active-l {
+    background-color: #ef4444;
+    color: var(--text-main);
+    border-color: #ef4444;
+}
+
 /* Multi-Division Grid Styles */
 .standings-grid {
     display: grid;
-    /* Force exactly 3 columns so AL gets row 1, NL gets row 2 */
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
@@ -193,7 +244,6 @@ button {
     background-color: #1e293b;
 }
 
-/* Make it responsive so it doesn't squish on small laptops */
 @media (max-width: 1200px) {
     .standings-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -201,21 +251,9 @@ button {
     .standings-grid { grid-template-columns: 1fr; }
 }
 
-/* --- LEAGUE COLOR CODING --- */
-/* American League (Red) */
-.panel.al-league {
-    border-top: 4px solid #ef4444; 
-}
-.panel.al-league h2 {
-    color: #ef4444;
-    border-bottom: 1px solid #ef4444;
-}
+/* AL / NL Color Coding */
+.panel.al-league { border-top: 4px solid #ef4444; }
+.panel.al-league h2 { color: #ef4444; border-bottom: 1px solid #ef4444; }
 
-/* National League (Blue) */
-.panel.nl-league {
-    border-top: 4px solid #3b82f6; 
-}
-.panel.nl-league h2 {
-    color: #3b82f6;
-    border-bottom: 1px solid #3b82f6;
-}
+.panel.nl-league { border-top: 4px solid #3b82f6; }
+.panel.nl-league h2 { color: #3b82f6; border-bottom: 1px solid #3b82f6; }

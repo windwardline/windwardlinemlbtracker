@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windward Line | MLB Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-bar">
+        <div class="logo">WINDWARD LINE <span>// MLB PLAYOFF TERMINAL</span></div>
+        <div class="status-indicator">
+            <span class="pulse"></span> LIVE DATA STREAM
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <section class="panel">
+            <h2>AL EAST STANDINGS</h2>
+            <div class="table-container">
+                <table id="standings-table">
+                    <thead>
+                        <tr>
+                            <th>TEAM</th>
+                            <th>W</th>
+                            <th>L</th>
+                            <th>PCT</th>
+                            <th>GB</th>
+                            <th>MAGIC #</th>
+                        </tr>
+                    </thead>
+                    <tbody id="standings-body">
+                        <tr>
+                            <td colspan="6" class="loading">Awaiting API Connection...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
